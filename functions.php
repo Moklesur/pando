@@ -8,78 +8,78 @@
  */
 
 if ( ! function_exists( 'themetim_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function themetim_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on ThemeTim WordPress Framework, use a find and replace
-	 * to change 'themetim' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'themetim', get_template_directory() . '/languages' );
-
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
-
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
 	 */
-	add_theme_support( 'post-thumbnails' );
+	function themetim_setup() {
+		/*
+         * Make theme available for translation.
+         * Translations can be filed in the /languages/ directory.
+         * If you're building a theme based on ThemeTim WordPress Framework, use a find and replace
+         * to change 'themetim' to the name of your theme in all the template files.
+         */
+		load_theme_textdomain( 'themetim', get_template_directory() . '/languages' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'themetim' ),
-		'footer-1' => esc_html__( 'Footer 1', 'themetim' ),
-		'footer-2' => esc_html__( 'Footer 2', 'themetim' ),
-		'footer-3' => esc_html__( 'Footer 3', 'themetim' ),
-	) );
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
+		/*
+         * Let WordPress manage the document title.
+         * By adding theme support, we declare that this theme does not use a
+         * hard-coded <title> tag in the document head, and expect WordPress to
+         * provide it for us.
+         */
+		add_theme_support( 'title-tag' );
 
-	/*
-	 * Enable support for Post Formats.
-	 * See https://developer.wordpress.org/themes/functionality/post-formats/
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside',
-		'image',
-		'video',
-		'quote',
-		'link',
-	) );
+		/*
+         * Enable support for Post Thumbnails on posts and pages.
+         *
+         * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+         */
+		add_theme_support( 'post-thumbnails' );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'themetim_custom_background_args', array(
-		'default-color' => '000',
-		'default-image' => '',
-	) ) );
-}
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus( array(
+			'primary' => esc_html__( 'Primary', 'themetim' ),
+			'footer-1' => esc_html__( 'Footer 1', 'themetim' ),
+			'footer-2' => esc_html__( 'Footer 2', 'themetim' ),
+			'footer-3' => esc_html__( 'Footer 3', 'themetim' ),
+		) );
+
+		/*
+         * Switch default core markup for search form, comment form, and comments
+         * to output valid HTML5.
+         */
+		add_theme_support( 'html5', array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		) );
+
+		/*
+         * Enable support for Post Formats.
+         * See https://developer.wordpress.org/themes/functionality/post-formats/
+         */
+		add_theme_support( 'post-formats', array(
+			'aside',
+			'image',
+			'video',
+			'quote',
+			'link',
+		) );
+
+		// Set up the WordPress core custom background feature.
+		add_theme_support( 'custom-background', apply_filters( 'themetim_custom_background_args', array(
+			'default-color' => '000',
+			'default-image' => '',
+		) ) );
+	}
 endif;
 add_action( 'after_setup_theme', 'themetim_setup' );
 
@@ -124,8 +124,8 @@ add_action( 'widgets_init', 'themetim_widgets_init' );
  * fonts.googleapis.com/css?family=Open+Sans:400,600
  */
 function themetim_scripts() {
-	wp_enqueue_style( 'themetim-body-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('body_font_family','Open+Sans').":".get_theme_mod('body_font_weight','300,400')) );
-	wp_enqueue_style( 'themetim-heading-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('heading_font_family','Open+Sans').":".get_theme_mod('heading_font_weight','400,700')) );
+	wp_enqueue_style( 'themetim-body-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('body_font_family','Play').":".get_theme_mod('body_font_weight','400')) );
+	wp_enqueue_style( 'themetim-heading-fonts', '//fonts.googleapis.com/css?family=' . esc_attr(get_theme_mod('heading_font_family','Play').":".get_theme_mod('heading_font_weight','700')) );
 	wp_enqueue_style( 'themetim-animate', get_template_directory_uri() . '/assets/css/animate.min.css', array(), '3.5.1' );
 	wp_enqueue_style( 'themetim-font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.5.0' );
 	wp_enqueue_style( 'themetim-animsition', get_template_directory_uri() . '/assets/css/animsition.min.css', array(), '4.0.2' );
@@ -195,9 +195,9 @@ require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 
 
 if ( class_exists( 'WooCommerce' ) ) {
-/**
- * ThemeTim Post Type
- */
+	/**
+	 * ThemeTim Post Type
+	 */
 	require get_template_directory() . '/inc/woo-hook.php';
 }
 /**
@@ -224,7 +224,7 @@ add_filter( 'excerpt_length', 'themetim_excerpt_length', 999 );
 add_filter( 'max_srcset_image_width', create_function( '', 'return 1;' ) );
 
 /**
- *TGM Plugin activation.
+ * TGM Plugin activation.
  */
 require_once dirname( __FILE__ ) . '/inc/class-tgm-plugin-activation.php';
 
@@ -239,22 +239,27 @@ function themetim_active_plugins() {
 		array(
 			'name'      => 'WooCommerce',
 			'slug'      => 'woocommerce',
-			'required'  => true,
+			'required'  => false,
 		),
 		array(
 			'name'      => 'Page Builder by SiteOrigin',
 			'slug'      => 'siteorigin-panels',
-			'required'  => true,
+			'required'  => false,
+		),
+		array(
+			'name'      => 'Page Builder by SiteOrigin',
+			'slug'      => 'so-widgets-bundle',
+			'required'  => false,
 		),
 		array(
 			'name'      => 'YITH WooCommerce Compare',
 			'slug'      => 'yith-woocommerce-compare',
-			'required'  => true,
+			'required'  => false,
 		),
 		array(
 			'name'      => 'YITH WooCommerce Quick View',
 			'slug'      => 'yith-woocommerce-quick-view',
-			'required'  => true,
+			'required'  => false,
 		),
 		array(
 			'name'      => 'Yoast SEO',

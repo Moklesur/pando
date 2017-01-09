@@ -50,9 +50,9 @@ function themetim_typography_color($color) {
     /*
      * Default Button
      */
-    $btn_default_bg = get_theme_mod( 'btn_default_bg', '#fff' );
-    $btn_default_text = get_theme_mod( 'btn_default_text', '#000' );
-    $btn_default_border = get_theme_mod( 'btn_default_border', '#000' );
+    $btn_default_bg = get_theme_mod( 'btn_default_bg', '#404040' );
+    $btn_default_text = get_theme_mod( 'btn_default_text', '#fff' );
+    $btn_default_border = get_theme_mod( 'btn_default_border', '#404040' );
 
     $color .= ".btn-default,.camera_wrap.main-slider .btn, .btn-default.disabled,.woocommerce ul.products li.product .button,.widget-area .search-form .search-submit,.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span,.woocommerce div.product form.cart .button,.woocommerce #review_form #respond .form-submit input,.woocommerce input.button , .woocommerce-cart .wc-proceed-to-checkout a.checkout-button,.woocommerce #payment #place_order ,.wpcf7-submit{ background-color:" . esc_attr($btn_default_bg) . "; color: " . esc_attr($btn_default_text) . ";border-color: " . esc_attr($btn_default_border) . "; } ";
 

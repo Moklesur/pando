@@ -16,4 +16,11 @@ require get_template_directory() . '/inc/widget/recent-blog-news/recent-blog-new
 require get_template_directory() . '/inc/widget/testimonial/testimonial.php';
 require get_template_directory() . '/inc/widget/brand/brand.php';
 require get_template_directory() . '/inc/widget/portfolio/portfolio.php';
-require get_template_directory() . '/inc/widget/team/team.php';
+/**
+ * Load Theme SiteOrigin Widgets.
+ */
+if ( class_exists( 'SiteOrigin_Widget' ) ) {
+    require get_template_directory() . '/inc/widget/team/team.php';
+    require get_template_directory() . '/inc/widget/service/service.php';
+    require get_template_directory() . '/inc/widget/editor/editor.php';
+}

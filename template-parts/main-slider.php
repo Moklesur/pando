@@ -20,7 +20,7 @@ $slider_query = new WP_Query( $slider_var );
                     <div class="slider-wrap">
                         <h2 class="text-uppercase animated fadeInDown"><?php the_title(); ?></h2>
                         <?php if($heading != '') : ?>
-                        <h2 class="text-uppercase animated fadeIn"><?php echo $heading;?></h2>
+                        <h3 class="text-uppercase animated fadeIn"><?php echo $heading;?></h3>
                         <?php endif; ?>
                         <?php if($text != ''): ?>
                             <p class=" animated fadeInUp"><?php echo $text; ?></p>
