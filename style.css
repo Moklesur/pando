@@ -15,6 +15,7 @@ Tags: fully customizable, custom color, custom fonts, visual page builder, mobil
     ## Common
 ********************************************************/
 body{
+	display: none;
 	font-weight: 400;
 }
 a,.btn,input,button,.woocommerce .product-fix .compare,.woocommerce .product-fix .yith-wcqv-button,.woocommerce ul.products li.product .thumbs{
