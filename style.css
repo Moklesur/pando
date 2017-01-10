@@ -1,13 +1,13 @@
 /*
-Theme Name: ThemeTim WordPress Framework
-Theme URI: http://themetim.com/
+Theme Name: Pando Multipurpose WordPress Theme
+Theme URI: http://demo.themetim.com/pando
 Author: themetim.com
 Author URI: http://themetim.com/
-Description: ThemeTim is responsive woocommerce integrated theme which is designed subtle and prevailing. Ideal for featuring ThemeTim products and techniques. It has ThemeTim optimized for best practice SEO with visual page builder integration.
+Description: Pando is responsive woocommerce integrated theme which is designed subtle and prevailing. Ideal for featuring Pando products and techniques. It has Pando optimized for best practice SEO with visual page builder integration.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: themetim.com
+Text Domain: themetim
 Tags: fully customizable, custom color, custom fonts, visual page builder, mobile responsive, responsive, grid, bootstrap, custom menu, full width, custom sidebar, ecommerce, blog, modern design, featured image, woman fashion, custom background, news and promotions, social,woocommerce
 */
 
@@ -49,6 +49,28 @@ p,.woocommerce-Address address {
 }
 .page-header{
 	margin:0 0 20px;
+	font-size: 20px;
+	border: 0;
+}
+.text-center-heading .page-header::after,.text-left-heading .page-header::after,.page-header:after,.text-right-heading .page-header::after,.service-fix .text-center-heading .page-header::before,.service-fix .text-left-heading .page-header::before,.service-fix .text-right-heading .page-header::before{
+	content: '';
+	width: 35px;
+	display:block;
+	margin: 10px auto 0;
+	border: 2px solid;
+}
+.service-fix .service-heading .page-header::after{
+	display: none;
+}
+.text-left-heading .page-header:after,.service-fix .text-left-heading .page-header::before{
+	margin: 10px 0 0 0;
+}
+.text-right-heading .page-header:after,.service-fix .text-right-heading .page-header::before{
+	margin: 10px auto  0 0;
+}
+.service-fix .text-center-heading .page-header::before,.service-fix .text-right-heading .page-header::before,.service-fix .text-left-heading .page-header::before{
+	margin-top: 0;
+	margin-bottom: 10px;
 }
 .margin-null,.header-social,.header-info,.woocommerce .products ul, .woocommerce ul.products,.footer-social,.newsletter h3,.woocommerce div.product .woocommerce-tabs .panel,.woocommerce div.product div.images, .woocommerce div.product div.summary,.woocommerce .woocommerce-breadcrumb,.woocommerce ul.products li.product .button{
 	margin: 0;
@@ -56,11 +78,15 @@ p,.woocommerce-Address address {
 .badge{
 	padding: 0;
 	border-radius: 50%;
-	width: 22px;
-	height: 22px;
-	line-height: 22px;
+	width: 21px;
+	height: 21px;
+	line-height: 21px;
 	font-size: 10px;
 	font-weight: normal;
+	position: absolute;
+	right: -6px;
+	top: -7px;
+	background: #404040;
 }
 .breadcrumb{
 	background-color: transparent;
@@ -121,7 +147,7 @@ p,.woocommerce-Address address {
 }
 .margin-bottom-30,.woocommerce .woocommerce-breadcrumb,.cat-description .term-description{
 	margin-bottom: 30px;
-}
+} 
 .margin-top-40{
 	margin-top: 40px;
 }
@@ -146,9 +172,6 @@ p,.woocommerce-Address address {
 /********************************************************
     ## Header
 ********************************************************/
-.header-top {
-	background: #f8f8f8;
-}
 .header-top .header-social a{
 	padding: 0 7px 0 0;
 }
@@ -176,11 +199,42 @@ header,.sticky .header-bottom{
 	width: 100%;
 	z-index: 10;
 }
+.header {
+	padding: 10px 0;
+}
+.search-fix{
+	left: auto;
+	right:0;
+}
+.search-fix{
+	border: 0;
+	padding: 15px;
+	margin-top: 26px;
+	border-radius: 0;
+	width: 350px;
+}
+.search-fix .btn{
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+.woocommerce-Price-amount{
+	display: none !important;
+}
 /********************************************************
     ## Menu, Slider
 ********************************************************/
-.primary-menu ul li a{
-	padding: 15px 30px 15px 0;
+.search-cart{
+	margin-top: 5px;
+}
+.navbar-default{
+	background-color: transparent;
+	border: 0;
+	min-height: inherit;
+	margin: 0;
+}
+.primary-menu .navbar-collapse ul li a{
+	padding: 5px 30px 5px 0;
 }
 .main-slider{
 	margin: 0 !important;
@@ -216,6 +270,13 @@ header,.sticky .header-bottom{
 .slider-wrap{
 	max-width: 950px;
 	margin:0 auto;
+}
+.slider-wrap h2{
+	font-size: 60px;
+	letter-spacing: 5px;
+}
+.slider-wrap .btn{
+	margin-top: 30px;
 }
 .camera_wrap.main-slider .btn{
 	padding: 10px 20px;
@@ -253,6 +314,10 @@ header,.sticky .header-bottom{
 /********************************************************
     ## Home
 ********************************************************/
+.service-fix{
+	padding: 45px;
+	background: #fff;
+}
 .testimonial-thumb img{
 	border-radius: 100%;
 }
@@ -278,6 +343,10 @@ header,.sticky .header-bottom{
 /********************************************************
     ## Contact Form
 ********************************************************/
+.form-control{
+	height: inherit;
+	border-color: #404040;
+}
 .wpcf7-form-control-wrap{
 	margin-top: 5px;
 }

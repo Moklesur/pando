@@ -318,39 +318,6 @@ function themetim_customize_register( $wp_customize ) {
 		) )
 	);
 	/********************* Top Header ************************/
-	$wp_customize->add_setting( 'social_header_enable', array(
-		'default'           => '1',
-	) );
-	$wp_customize->add_control( 'social_header_enable', array(
-		'label' => __( 'Enable Header Social', 'text_domain' ),
-		'type' => 'checkbox',
-		'description'   => __('## Please Go Back To Social Media Settings For Social Links ##', 'text_domain'),
-		'section' => 'title_tagline',
-		'settings' => 'social_header_enable'
-	) );
-
-
-	$wp_customize->add_setting( 'top_header_tel_enable', array(
-		'default'           => '1',
-	) );
-	$wp_customize->add_control( 'top_header_tel_enable', array(
-		'label' => __( 'Enable Tel', 'text_domain' ),
-		'type' => 'checkbox',
-		'description'   => __('', 'text_domain'),
-		'section' => 'title_tagline',
-		'settings' => 'top_header_tel_enable'
-	) );
-
-	$wp_customize->add_setting( 'top_header_tel', array(
-		'default'           => '880 1916 404543',
-	) );
-	$wp_customize->add_control( 'top_header_tel', array(
-		'label' => __( 'Phone Number', 'text_domain' ),
-		'type' => 'text',
-		'section' => 'title_tagline',
-		'settings' => 'top_header_tel'
-	) );
-
 	$wp_customize->add_setting( 'top_header_account_enable', array(
 		'default'           => '1',
 	) );
@@ -413,21 +380,6 @@ function themetim_customize_register( $wp_customize ) {
 		'section' => 'title_tagline',
 		'settings' => 'cart_enable'
 	) );
-	/**
-	 * ThemeTim Divider
-	 */
-	$wp_customize->add_setting('themetim_options[divider]', array(
-			'type'              => 'divider_control',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'esc_attr',
-		)
-	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'header_bottom', array(
-			'label' => __('Bottom Header', 'themetidy'),
-			'section' => 'title_tagline',
-			'settings' => 'themetim_options[divider]'
-		) )
-	);
 
 	$wp_customize->add_setting( 'bottom_header_search', array(
 		'default'           => '1',
@@ -1444,7 +1396,7 @@ function themetim_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'body_font_family',
 		array(
-			'default' => 'Open+Sans',
+			'default' => 'Play',
 			'capability'     => 'edit_theme_options'
 		)
 	);
@@ -1501,7 +1453,7 @@ function themetim_customize_register( $wp_customize ) {
 		'description'   => __('', 'text_domain')
 	) );
 	$wp_customize->add_setting('heading_font_family', array(
-		'default'        => 'Open+Sans',
+		'default'        => 'Play',
 		'capability'     => 'edit_theme_options',
 	));
 	$wp_customize->add_control( 'heading_font_family', array(

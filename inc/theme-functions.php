@@ -8,45 +8,6 @@
  * Header
  ********************************************************/
 /**
- *  Header Social
- */
-function header_social() {
-
-    if(get_theme_mod('social_header_enable')) :
-        ?>
-        <ul class="list-inline header-social">
-            <?php
-            if(get_theme_mod('header_fb', 'https://www.facebook.com/') ) {
-                echo '<li><a href="'.get_theme_mod('header_fb').'"  target="_blank"><i class="fa fa-facebook"></i></a></li>';
-            }
-            if(get_theme_mod('header_tw', '1')) {
-                echo '<li><a href="'.get_theme_mod('header_tw', 'https://twitter.com ').'" target="_blank"><i class="fa fa-twitter"></i></a></li>';
-            }
-            if(get_theme_mod('header_li', '1')) {
-                echo '<li><a href="'.get_theme_mod('header_li', 'https://linkedin.com').'" target="_blank"><i class="fa fa-linkedin"></i></a></li>';
-            }
-            if(get_theme_mod('header_pint', '1')) {
-                echo '<li><a href="'.get_theme_mod('header_pint', 'https://pinterest.com').'" target="_blank"><i class="fa fa-pinterest"></i></a></li>';
-            }
-            if(get_theme_mod('header_ins', '1')) {
-                echo '<li><a href="'.get_theme_mod('header_ins', 'https://instagram.com').'" target="_blank"><i class="fa fa-linkedin"></i></a></li>';
-            }
-            if(get_theme_mod('header_dri', '1')) {
-                echo '<li><a href="'.get_theme_mod('header_dri', 'https://dribbble.com').'" target="_blank"><i class="fa fa-dribbble"></i></a></li>';
-            }
-            if(get_theme_mod('header_plus', '1')) {
-                echo '<li><a href="'.get_theme_mod('header_plus', 'https://plus.google.com').'" target="_blank"><i class="fa fa-google-plus"></i></a></li>';
-            }
-            if(get_theme_mod('header_you', '1')) {
-                echo '<li><a href="'.get_theme_mod('header_you', 'https://youtube.com').'" target="_blank"><i class="fa fa-youtube"></i></a></li>';
-            }
-            ?>
-        </ul>
-        <?php
-    endif;
-}
-add_action( 'themetim_header_social', 'header_social' );
-/**
  * Header My Account
  */
 function header_account(){
