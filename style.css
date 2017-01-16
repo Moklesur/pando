@@ -17,7 +17,7 @@ Tags: fully customizable, custom color, custom fonts, visual page builder, mobil
 body{
 	font-weight: 400;
 }
-a,.btn,input,button,.woocommerce .product-fix .compare,.woocommerce .product-fix .yith-wcqv-button,.woocommerce ul.products li.product .thumbs{
+a,.btn,input,button,.woocommerce .product-fix .compare,.woocommerce .product-fix .yith-wcqv-button,.woocommerce ul.products li.product .thumbs,.portfolio-url span,.portfolio-url::after{
 	-webkit-transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;
 	-ms-transition: all .3s ease-in-out;
@@ -49,7 +49,7 @@ p,.woocommerce-Address address {
 }
 .page-header{
 	margin:0 0 20px;
-	font-size: 20px;
+	font-size: 24px;
 	border: 0;
 }
 .text-center-heading .page-header::after,.text-left-heading .page-header::after,.page-header:after,.text-right-heading .page-header::after,.service-fix .text-center-heading .page-header::before,.service-fix .text-left-heading .page-header::before,.service-fix .text-right-heading .page-header::before{
@@ -72,7 +72,7 @@ p,.woocommerce-Address address {
 	margin-top: 0;
 	margin-bottom: 10px;
 }
-.margin-null,.header-social,.header-info,.woocommerce .products ul, .woocommerce ul.products,.footer-social,.newsletter h3,.woocommerce div.product .woocommerce-tabs .panel,.woocommerce div.product div.images, .woocommerce div.product div.summary,.woocommerce .woocommerce-breadcrumb,.woocommerce ul.products li.product .button{
+.margin-null,.header-social,.header-info,.woocommerce .products ul, .woocommerce ul.products,.footer-social,.woocommerce div.product .woocommerce-tabs .panel,.woocommerce div.product div.images, .woocommerce div.product div.summary,.woocommerce .woocommerce-breadcrumb,.woocommerce ul.products li.product .button{
 	margin: 0;
 }
 .badge{
@@ -86,7 +86,10 @@ p,.woocommerce-Address address {
 	position: absolute;
 	right: -6px;
 	top: -7px;
-	background: #404040;
+	background: #fec826;
+}
+img {
+	max-width: 100%;
 }
 .breadcrumb{
 	background-color: transparent;
@@ -130,7 +133,7 @@ p,.woocommerce-Address address {
 .padding-top-10 {
 	padding-top: 10px;
 }
-.padding-bottom-10,.footer-top{
+.padding-bottom-10{
 	padding-bottom: 10px;
 }
 .margin-top-10{
@@ -214,11 +217,12 @@ header,.sticky .header-bottom{
 	width: 350px;
 }
 .search-fix .btn{
+	font-size: 20px;
 	position: absolute;
 	top: 15px;
 	right: 15px;
 }
-.woocommerce-Price-amount{
+.mini-cart .woocommerce-Price-amount{
 	display: none !important;
 }
 /********************************************************
@@ -234,7 +238,7 @@ header,.sticky .header-bottom{
 	margin: 0;
 }
 .primary-menu .navbar-collapse ul li a{
-	padding: 5px 30px 5px 0;
+	padding: 5px 15px 5px 15px;
 }
 .main-slider{
 	margin: 0 !important;
@@ -314,6 +318,80 @@ header,.sticky .header-bottom{
 /********************************************************
     ## Home
 ********************************************************/
+.testimonial-details {
+	font-size: 16px;
+	padding: 15px;
+}
+.testimonial .item img{
+	max-width: 65px;
+}
+.brand li{
+	width: 16%;
+}
+.brand img{
+	max-width: 60px;
+}
+.pricing-list li{
+	width: 33.33%;
+	padding: 0 15px 15px;
+}
+.pricing-list li>div{
+	border: 1px solid #eee;
+	padding-bottom: 30px;
+}
+.pricing-list li:nth-child(2n+2) span{
+	background: #fec826;
+}
+.pricing-list li .pricing-icon{
+	display: block;
+	padding: 30px 50px 50px;
+	background: #eee;
+	margin-bottom: 50px;
+}
+.pricing-details{
+	padding: 40px 65px 40px;
+	border-top: 1px solid #eee;
+	margin-top: 40px;
+}
+.fact-list li,.fact-list li h1 {
+	color: #fff;
+}
+.fact-list li{
+	width: 25%;
+	padding: 15px;
+	border-right: 2px solid #f5be19;
+}
+.fact-list li:nth-child(4n+4){
+	border-color: transparent;
+}
+.portfolio-url{
+	font-size: 30px;
+}
+.portfolio-url:hover::after{
+	visibility: visible;
+}
+.portfolio-url::after{
+	visibility: hidden;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+}
+.portfolio-url span{
+	color: #fff;
+	width: 100%;
+	z-index: 1;
+	position: absolute;
+	top: 60%;
+	visibility: hidden;
+}
+.portfolio-url:hover span{
+	visibility: visible;
+	top: 50%;
+}
 .service-fix{
 	padding: 45px;
 	background: #fff;
@@ -345,7 +423,8 @@ header,.sticky .header-bottom{
 ********************************************************/
 .form-control{
 	height: inherit;
-	border-color: #404040;
+	border-color: #111;
+	padding: 10px 15px;
 }
 .wpcf7-form-control-wrap{
 	margin-top: 5px;
@@ -370,14 +449,19 @@ header,.sticky .header-bottom{
 	padding-bottom: 0;
 }
 .widget-area section{
-	background: #f9f9f9;
 	padding: 15px;
 	margin-bottom: 30px;
 }
 .widget-area section .widget-title{
-	border-bottom: 1px solid #ddd;
+	position: relative;
 	padding-bottom: 10px;
 	margin-bottom: 20px;
+}
+.widget-area section .widget-title::after{
+	content: '';
+	width: 45px;
+	border: 1px solid;
+	display: block;
 }
 .widget-area .search-form .search-field{
 	border-radius:0 ;
@@ -468,7 +552,7 @@ header,.sticky .header-bottom{
 	width: 31.5%;
 }
 .product-fix:hover .product-hover {
-	top: 23%;
+	top: 33%;
 	height: inherit;
 	z-index: 2;
 }
@@ -485,7 +569,7 @@ header,.sticky .header-bottom{
 }
 .product-fix:hover .background-overlay {
 	z-index: 1;
-	background: rgba(0, 0, 0, 0.61);
+	background: rgba(0, 0, 0, 0.5);
 }
 .woocommerce .products .star-rating {
 	display: block;
@@ -665,7 +749,7 @@ header,.sticky .header-bottom{
 	opacity: 1;
 }
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
-	width: 23%;
+	width: 30.8%;
 }
 .woocommerce ul.products li.product .onsale,.woocommerce span.onsale {
 	margin: 5px 5px 0 0;
@@ -753,34 +837,24 @@ header,.sticky .header-bottom{
 /********************************************************
     ## Footer
 ********************************************************/
-.footer-top{
-	background: #ddd;
+.newsletter .form-control{
+	background: transparent;
 }
-.footer-social a{
+.footer-main .container{
+	max-width: 600px;
+	margin: 0 auto;
+}
+.footer-main .footer-social a{
 	margin-top: 10px;
 	border: 1px solid;
 	padding: 5px 9px;
-}
-.newsletter{
-	margin-top: 10px;
-}
-.newsletter h3{
-	margin-right: 10px;
-	margin-top: 3px;
-}
-.footer-middle{
-	background: #f9f9f9;
-	padding-bottom: 40px;
-}
-.footer-middle h4{
-	margin-top: 40px;
-}
-.footer-middle li a{
-	padding: 5px 0;
+	color: #fec826;
 }
 .footer-bottom{
-	padding-top: 20px;
-	background: #ddd;
+	padding-top: 40px;
+	padding-bottom: 30px;
+	border-top: 1px solid #111;
+	background: #060606;
 }
 /********************************************************
     ## Miscellaneous

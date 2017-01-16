@@ -10,11 +10,10 @@ jQuery(function(){
     if (jQuery('.main-slider').length) {
         jQuery('.main-slider').camera({
             height: '50%',
-            loader: 'bar',
+            loader: 'none',
             margin:'',
             alignment: 'center',
             minHeight: '600px',
-            barPosition: 'top',
             thumbnails: true,
             playPause: false,
             loaderColor: '#f9f9f9',
@@ -103,7 +102,7 @@ jQuery(function(){
             outClass: 'fade-out',
             inDuration: 1500,
             outDuration: 800,
-            linkElement: 'a:not([target="_blank"]):not([href^="#"])',
+            linkElement: '.primary-menu .navbar-collapse ul li a',
             // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
             loading: true,
             loadingParentElement: 'body', //animsition wrapper element

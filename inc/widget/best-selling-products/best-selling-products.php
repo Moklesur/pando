@@ -23,43 +23,16 @@ class BestSellingProducts_Widget extends WP_Widget {
      */
     public function widget( $args, $instance ) {
         $title ='';
-
-        $product_carousel_enable = apply_filters( 'widget_text', $instance['product_carousel_enable'] );
-        $carousel_class= '';
-        if ( $product_carousel_enable ==  '1' ) {
-            $carousel_class = 'best-selling-carousel';
-        }
-
         if ( ! empty( $instance['title'] ) ) {
-            $title = '<h2 class="page-header">'. apply_filters( 'widget_title', $instance['title'] ).'</h2>';
+            $title = '<h2 class="page-header text-center">'. apply_filters( 'widget_title', $instance['title'] ).'</h2>';
         }
         $product_limit = apply_filters( 'widget_title', $instance['product_limit'] );
         $product_columns = apply_filters( 'widget_title', $instance['product_columns'] );
-
         ?>
-
-        <div class="best-selling-widget default-widget <?php echo $carousel_class; ?>">
+        <div class="best-selling-widget default-widget">
             <?php echo $title ?>
             <?php echo do_shortcode('[best_selling_products per_page='.$product_limit.' columns='.$product_columns.']'); ?>
         </div>
-        <script>
-            jQuery(function(){
-                /*******************************************************************************
-                 * Carousel Slider
-                 *******************************************************************************/
-                if(jQuery('.best-selling-carousel').length){
-                    jQuery('.best-selling-carousel .products').owlCarousel({
-                        loop:true,
-                        margin:30,
-                        responsiveClass:true,
-                        items:1,
-                        autoplay:true,
-                        nav: true,
-                        navText: ["<a><i class='fa fa-angle-left fa-2x'></i></a>","<a><i class='fa fa-angle-right  fa-2x'></i></a>"]
-                    });
-                }
-            });
-        </script>
         <?php
     }
     /**
@@ -73,7 +46,6 @@ class BestSellingProducts_Widget extends WP_Widget {
         $title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Best Selling Products', 'text_domain' );
         $product_limit = ! empty( $instance['product_limit'] ) ? $instance['product_limit'] : __( '4', 'text_domain' );
         $product_columns = ! empty( $instance['product_columns'] ) ? $instance['product_columns'] : __( '4', 'text_domain' );
-        $product_carousel_enable = ! empty( $instance['product_carousel_enable'] ) ? $instance['product_carousel_enable'] : __( '', 'text_domain' );
         ?>
         <div class="widget-area">
             <p>
@@ -87,12 +59,6 @@ class BestSellingProducts_Widget extends WP_Widget {
             <p>
                 <label for="<?php echo $this->get_field_id( 'product_columns' ); ?>"><?php _e( 'Product Columns:' ); ?></label>
                 <input class="widefat" id="<?php echo $this->get_field_id( 'product_columns' ); ?>" name="<?php echo $this->get_field_name( 'product_columns' ); ?>" type="number" max="4" value="<?php echo esc_attr( $product_columns ); ?>">
-            </p>
-            <h2>Advance Option</h2>
-            <p>
-                <input class="widefat" id="<?php echo $this->get_field_id('product_carousel_enable'); ?>" name="<?php echo $this->get_field_name('product_carousel_enable'); ?>" type="checkbox" value="1" <?php checked( $instance['product_carousel_enable'], '1'); ?>  />
-                <label for="<?php echo $this->get_field_id('product_carousel_enable'); ?>"><?php _e('Enable Slider'); ?></label>
-                <br/><small>## if enable slider then please make Product Column 1.</small>
             </p>
         </div>
 
@@ -110,7 +76,6 @@ class BestSellingProducts_Widget extends WP_Widget {
      */
     public function update( $new_instance, $old_instance ) {
         $instance = array();
-        $instance['product_carousel_enable'] = ( ! empty( $new_instance['product_carousel_enable'] ) ) ? strip_tags( $new_instance['product_carousel_enable'] ) : '';
         $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
         $instance['product_limit'] = ( ! empty( $new_instance['product_limit'] ) ) ? strip_tags( $new_instance['product_limit'] ) : '';
         $instance['product_columns'] = ( ! empty( $new_instance['product_columns'] ) ) ? strip_tags( $new_instance['product_columns'] ) : '';

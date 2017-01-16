@@ -450,44 +450,9 @@ function themetim_customize_register( $wp_customize ) {
 		'section' => 'footer_settings',
 		'settings' => 'newsletter_footer_enable'
 	) );
-	$wp_customize->add_setting( 'top_footer_newsletter_title', array(
-		'default'           => 'Newsletter',
-	) );
-	$wp_customize->add_control( 'top_footer_newsletter_title', array(
-		'label' => __( 'Heading', 'text_domain' ),
-		'type' => 'text',
-		'section' => 'footer_settings',
-		'settings' => 'top_footer_newsletter_title',
-		'description'   => __('', 'text_domain')
-	) );
-	$wp_customize->add_setting( 'top_footer_newsletter_url', array(
-		'default'           => 'https://www.yourmailchimpurl.com',
-	) );
-	$wp_customize->add_control( 'top_footer_newsletter_url', array(
-		'label' => __( 'Mail Chimp URL', 'text_domain' ),
-		'type' => 'textarea',
-		'section' => 'footer_settings',
-		'settings' => 'top_footer_newsletter_url',
-		'description'   => __('', 'text_domain')
-	) );
 
-	/**
-	 * ThemeTim Divider
-	 */
-	$wp_customize->add_setting('themetim_options[divider]', array(
-			'type'              => 'divider_control',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'esc_attr',
-		)
-	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'footer_middle', array(
-			'label' => __('Middle Footer', 'themetidy'),
-			'section' => 'footer_settings',
-			'settings' => 'themetim_options[divider]'
-		) )
-	);
 
-	/********************* Middle Footer ************************/
+
 	$wp_customize->add_setting( 'middle_footer_text_enable', array(
 		'default'           => '1',
 	) );
@@ -499,14 +464,14 @@ function themetim_customize_register( $wp_customize ) {
 		'settings' => 'middle_footer_text_enable'
 	) );
 
-	$wp_customize->add_setting( 'middle_footer_text_heading', array(
-		'default'           => 'About',
+	$wp_customize->add_setting( 'top_footer_newsletter_title', array(
+		'default'           => 'Newsletter',
 	) );
-	$wp_customize->add_control( 'middle_footer_text_heading', array(
+	$wp_customize->add_control( 'top_footer_newsletter_title', array(
 		'label' => __( 'Heading', 'text_domain' ),
 		'type' => 'text',
 		'section' => 'footer_settings',
-		'settings' => 'middle_footer_text_heading',
+		'settings' => 'top_footer_newsletter_title',
 		'description'   => __('', 'text_domain')
 	) );
 	$wp_customize->add_setting( 'middle_footer_text', array(
@@ -519,69 +484,15 @@ function themetim_customize_register( $wp_customize ) {
 		'settings' => 'middle_footer_text',
 		'description'   => __('', 'text_domain')
 	) );
-
-
-	$wp_customize->add_setting( 'middle_footer_nav_heading_1', array(
-		'default'           => 'The Service',
+	$wp_customize->add_setting( 'top_footer_newsletter_url', array(
+		'default'           => 'https://www.yourmailchimpurl.com',
 	) );
-	$wp_customize->add_control( 'middle_footer_nav_heading_1', array(
-		'label' => __( 'Heading', 'text_domain' ),
-		'type' => 'text',
+	$wp_customize->add_control( 'top_footer_newsletter_url', array(
+		'label' => __( 'Mail Chimp URL', 'text_domain' ),
+		'type' => 'textarea',
 		'section' => 'footer_settings',
-		'settings' => 'middle_footer_nav_heading_1',
+		'settings' => 'top_footer_newsletter_url',
 		'description'   => __('', 'text_domain')
-	) );
-	$wp_customize->add_setting( 'middle_footer_nav_1_enable', array(
-		'default'           => '1',
-	) );
-	$wp_customize->add_control( 'middle_footer_nav_1_enable', array(
-		'label' => __( 'Enable Nav 1', 'text_domain' ),
-		'type' => 'checkbox',
-		'description'   => __('', 'text_domain'),
-		'section' => 'footer_settings',
-		'settings' => 'middle_footer_nav_1_enable'
-	) );
-
-	$wp_customize->add_setting( 'middle_footer_nav_heading_2', array(
-		'default'           => 'Information',
-	) );
-	$wp_customize->add_control( 'middle_footer_nav_heading_2', array(
-		'label' => __( 'Heading', 'text_domain' ),
-		'type' => 'text',
-		'section' => 'footer_settings',
-		'settings' => 'middle_footer_nav_heading_2',
-		'description'   => __('', 'text_domain')
-	) );
-	$wp_customize->add_setting( 'middle_footer_nav_2_enable', array(
-		'default'           => '1',
-	) );
-	$wp_customize->add_control( 'middle_footer_nav_2_enable', array(
-		'label' => __( 'Enable Nav 2', 'text_domain' ),
-		'type' => 'checkbox',
-		'description'   => __('', 'text_domain'),
-		'section' => 'footer_settings',
-		'settings' => 'middle_footer_nav_2_enable'
-	) );
-
-	$wp_customize->add_setting( 'middle_footer_nav_heading_3', array(
-		'default'           => 'Follow Us',
-	) );
-	$wp_customize->add_control( 'middle_footer_nav_heading_3', array(
-		'label' => __( 'Heading', 'text_domain' ),
-		'type' => 'text',
-		'section' => 'footer_settings',
-		'settings' => 'middle_footer_nav_heading_3',
-		'description'   => __('', 'text_domain')
-	) );
-	$wp_customize->add_setting( 'middle_footer_nav_3_enable', array(
-		'default'           => '1',
-	) );
-	$wp_customize->add_control( 'middle_footer_nav_3_enable', array(
-		'label' => __( 'Enable Nav 3', 'text_domain' ),
-		'type' => 'checkbox',
-		'description'   => __('', 'text_domain'),
-		'section' => 'footer_settings',
-		'settings' => 'middle_footer_nav_3_enable'
 	) );
 
 	/**
@@ -611,7 +522,7 @@ function themetim_customize_register( $wp_customize ) {
 		'settings' => 'bottom_footer_copyright_enable'
 	) );
 	$wp_customize->add_setting( 'bottom_footer_copyright', array(
-		'default'           => '© 2016 ThemeTim. All Rights Reserved.',
+		'default'           => '© ThemeTim. All Rights Reserved.',
 	) );
 	$wp_customize->add_control( 'bottom_footer_copyright', array(
 		'label' => __( 'Text', 'text_domain' ),
@@ -619,16 +530,6 @@ function themetim_customize_register( $wp_customize ) {
 		'section' => 'footer_settings',
 		'settings' => 'bottom_footer_copyright',
 		'description'   => __('', 'text_domain')
-	) );
-	$wp_customize->add_setting( 'bottom_footer_nav_enable', array(
-		'default'           => '1',
-	) );
-	$wp_customize->add_control( 'bottom_footer_nav_enable', array(
-		'label' => __( 'Enable Nav', 'text_domain' ),
-		'type' => 'checkbox',
-		'description'   => __('', 'text_domain'),
-		'section' => 'footer_settings',
-		'settings' => 'bottom_footer_nav_enable'
 	) );
 
 	/*********************************************

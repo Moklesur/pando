@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' ); ?>
-<main class="themetim-archive-product padding-gap-2">
+<main class="themetim-archive-product padding-gap-2 padding-gap-1">
 	<section>
 		<div class='container'>
 			<div class='row'>

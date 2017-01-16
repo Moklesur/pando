@@ -19,6 +19,6 @@
 		<div class="services-details"><?php echo  $instance['texteditor']; ?></div>
 	<?php endif; ?>
 	<?php if ( ! empty( $instance['button_text'] ) ) : ?>
-		<div class="default-button margin-top-30"><a href="<?php echo  $instance['button_url']; ?>" class="btn <?php echo  $instance['button_style']; ?>"><?php echo  $instance['button_text']; ?></a></div>
+		<div class="default-button margin-top-30"><a href="<?php echo  sow_esc_url($instance['button_url']); ?>" class="btn <?php echo  $instance['button_style']; ?>"><?php echo  $instance['button_text']; ?></a></div>
 	<?php endif; ?>
 </div>
