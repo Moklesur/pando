@@ -21,7 +21,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' ); ?>
-<main class="themetim-archive-product padding-gap-2 padding-gap-1">
+<main class="themetim-archive-product padding-gap-2">
+	<!--------------- Woo Breadcrumb ---------------->
+	<section class="breadcrumb-wrap text-capitalize  text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<header class="entry-header text-center">
+						<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+							<h3 class="entry-title page-header"><?php woocommerce_page_title(); ?></h3>
+						<?php endif; ?>
+					</header><!-- .entry-header -->
+					<?php woocommerce_breadcrumb(); ?>
+				</div>
+			</div>
+		</div>
+	</section>
 	<section>
 		<div class='container'>
 			<div class='row'>
@@ -35,13 +50,6 @@ get_header( 'shop' ); ?>
 				do_action( 'woocommerce_before_main_content' );
 				?>
 				<div class='col-md-12 col-sm-12 col-xs-12 cat-description'>
-					<div class='text-center'>
-						<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-
-							<h2 class="page-header"><?php woocommerce_page_title(); ?></h2>
-
-						<?php endif; ?>
-					</div>
 					<?php
 					/**
 					 * woocommerce_archive_description hook.

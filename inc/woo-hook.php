@@ -78,7 +78,7 @@ function custom_add_product_description ($category) {
 add_filter('loop_shop_columns', 'loop_columns');
 if (!function_exists('loop_columns')) {
     function loop_columns() {
-        return 3; // 3 products per row
+        return 2; // 3 products per row
     }
 }
 
@@ -121,7 +121,7 @@ function change_cross_sells_columns( $columns ) {
  *
  * Number of products displayed per page
  */
-add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 9;' ), 20 );
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 6;' ), 20 );
 
 /**
  * Single Product Page
@@ -167,8 +167,6 @@ function wps_add_extra_product_thumbs() {
 /**
  * ThemeTim Single Product Page (Next Prev Product)
  */
-//add_action( 'woocommerce_before_single_product', 'bbloomer_prev_next_product' );
-//add_action( 'woocommerce_after_single_product', 'bbloomer_prev_next_product' );
 
 function bbloomer_prev_next_product(){
     echo '<div class="prev_next_buttons">';
@@ -210,8 +208,14 @@ function themetim_modify_woocommerce_breadcrumbs() {
 }
 
 /**
- * ThemeTim
- * Changed product limit of shop page 9 to 12
+ * Related Product
+ * Modify Related
  */
 
-add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 12;' ), 20 );
+add_filter( 'woocommerce_output_related_products_args', 'themetim_related_product' );
+
+function themetim_related_product( $args ) {
+    $args['posts_per_page'] = 2; // # of related products
+    $args['columns'] = 2; // # of columns per row
+    return $args;
+}

@@ -12,7 +12,25 @@ get_header(); ?>
         <?php if(is_front_page()) :
             require get_template_directory() . '/template-parts/main-slider.php';
         endif; ?>
-        <section class="banner">
+        <!--------------- Woo Breadcrumb ---------------->
+        <section class="breadcrumb-wrap text-capitalize text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php if(!is_front_page()): ?>
+                            <header class="entry-header text-center">
+                                <?php the_title( '<h3 class="entry-title page-header">', '</h3>' ); ?>
+                            </header><!-- .entry-header -->
+                        <?php endif;
+
+                        if ( class_exists( 'WooCommerce' ) && !is_front_page()) {
+                            woocommerce_breadcrumb();
+                        } ?>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12 padding-gap-1 padding-gap-4">

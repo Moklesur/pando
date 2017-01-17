@@ -19,16 +19,16 @@ function themetim_typography_color($color) {
      */
     $body_text_color = get_theme_mod( 'bg_text_color', '#000' );
     $body_font_size = get_theme_mod( 'body_font_size', '14' );
-    $body_font_family = get_theme_mod( 'body_font_family', 'Open Sans' );
+    $body_font_family = get_theme_mod( 'body_font_family', 'Play' );
 
     $color .= "body { color:" . esc_attr($body_text_color) . "; font-size: " . esc_attr($body_font_size) . "px; font-family: ". esc_attr(str_replace('+', ' ', $body_font_family)) ."} ";
 
     $heading_color = get_theme_mod( 'heading_color', '#000' );
-    $heading_font_family = get_theme_mod( 'heading_font_family', 'Open Sans' );
+    $heading_font_family = get_theme_mod( 'heading_font_family', 'Play' );
     $color .= "h1, h2, h3, h4, h5, h6 { color:" . esc_attr($heading_color) . ";font-family: ". esc_attr(str_replace('+', ' ', $heading_font_family)) ."} ";
 
     $link_color = get_theme_mod( 'link_color', '#000' );
-    $color .= ".woocommerce ul.products li.product .price,a,.header-bottom .navbar-default .active a:hover,.header-bottom .navbar-default li> a,.woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price,.woocommerce div.product form.cart .variations td.label { color:" . esc_attr($link_color) . "} ";
+    $color .= ".breadcrumb-wrap a:hover,.woocommerce ul.products li.product .price,a,.header-bottom .navbar-default .active a:hover,.header-bottom .navbar-default li> a,.woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price,.woocommerce div.product form.cart .variations td.label { color:" . esc_attr($link_color) . "} ";
 
     $link_hover_color = get_theme_mod( 'link_hover_color', '#fec826' );
     $color .= ".navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover,a:hover,.header-bottom .navbar-default .active a,.header-bottom .navbar-default .active a:hover,.header-bottom .navbar-default li> a:hover { color:" . esc_attr($link_hover_color) . "} ";

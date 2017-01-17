@@ -15,6 +15,28 @@
 get_header(); ?>
 
 	<main class="home-page woocommerce">
+		<!--------------- Woo Breadcrumb ---------------->
+		<section class="breadcrumb-wrap text-capitalize  text-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<header class="entry-header margin-bottom-20">
+							<?php
+							if ( is_single() ) {
+								the_title( '<h3 class="entry-title page-header text-capitalize margin-null">', '</h3>' );
+							} else {
+								echo '<h3 class="entry-title page-header margin-null text-capitalize">Blog</h3>';
+							}
+
+							?>
+						</header><!-- .entry-header -->
+						<?php if ( class_exists( 'WooCommerce' ) && !is_front_page()) {
+							woocommerce_breadcrumb();
+						} ?>
+					</div>
+				</div>
+			</div>
+		</section>
 		<section class="banner">
 			<div class="container">
 				<div class="row">
@@ -25,12 +47,6 @@ get_header(); ?>
 							<?php endif; ?>
 							<?php
 							if ( have_posts() ) :
-								if ( is_home() && ! is_front_page() ) : ?>
-									<header>
-										<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-									</header>
-									<?php
-								endif;
 
 								/* Start the Loop */
 								while ( have_posts() ) : the_post();

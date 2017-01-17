@@ -22,6 +22,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 <main>
+	<!--------------- Woo Breadcrumb ---------------->
+	<section class="breadcrumb-wrap text-capitalize  text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<header class="entry-header text-center">
+						<h3 class="entry-title page-header"><?php woocommerce_page_title(); ?></h3>
+					</header><!-- .entry-header -->
+					<?php woocommerce_breadcrumb(); ?>
+				</div>
+			</div>
+		</div>
+	</section>
 	<section>
 		<div class='container'>
 			<div class='row'>
@@ -61,7 +74,7 @@ get_header( 'shop' ); ?>
 					 * @hooked woocommerce_get_sidebar - 10
 					 */
 					if (get_theme_mod('shop_sidebar_enable') ) :
-						?><aside id="secondary" class="widget-area col-md-3 col-sm-12 col-xs-12 padding-gap-1" role="complementary"><?php
+						?><aside id="secondary" class="widget-area col-md-3 col-sm-12 col-xs-12 padding-gap-2" role="complementary"><?php
 						dynamic_sidebar( 'shop-product' );
 						?></aside><?php
 					endif;

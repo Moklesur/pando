@@ -10,14 +10,25 @@
 get_header(); ?>
 
 	<main id="main" class="search-page woocommerce" role="main">
+		<!--------------- Woo Breadcrumb ---------------->
+		<section class="breadcrumb-wrap text-capitalize text-center">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<header class="entry-header text-center">
+							<h3 class="entry-title page-header">Search</h3>
+						</header><!-- .entry-header -->
+						<?php
+						if ( class_exists( 'WooCommerce' ) && !is_front_page()) {
+							woocommerce_breadcrumb();
+						} ?>
+					</div>
+				</div>
+			</div>
+		</section>
 		<section>
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12 text-center">
-						<header class="page-header margin-null  padding-gap-1">
-							<h2 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'themetim' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
-						</header><!-- .page-header -->
-					</div>
 					<div class="col-md-9 col-sm-8 col-xs-12 padding-gap-1 padding-gap-4">
 						<?php
 						if ( have_posts() ) : ?>

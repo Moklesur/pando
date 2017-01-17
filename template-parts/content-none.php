@@ -10,7 +10,7 @@
 ?>
 
 <div class="no-results not-found">
-	<header>
+	<header class=" text-center">
 		<h3 class="page-title page-header"><?php esc_html_e( 'Nothing Found', 'themetim' ); ?></h3>
 	</header><!-- .page-header -->
 
