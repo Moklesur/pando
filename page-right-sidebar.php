@@ -12,23 +12,24 @@ get_header(); ?>
             require get_template_directory() . '/template-parts/main-slider.php';
         endif; ?>
         <!--------------- Woo Breadcrumb ---------------->
-        <section class="breadcrumb-wrap text-capitalize  text-center">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <?php if(!is_front_page()): ?>
+        <?php if(!is_front_page()): ?>
+            <!--------------- Woo Breadcrumb ---------------->
+            <section class="breadcrumb-wrap text-capitalize  text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
                             <header class="entry-header text-center">
                                 <?php the_title( '<h3 class="entry-title page-header">', '</h3>' ); ?>
                             </header><!-- .entry-header -->
-                        <?php endif;
-
-                        if ( class_exists( 'WooCommerce' ) && !is_front_page()) {
-                            woocommerce_breadcrumb();
-                        } ?>
+                            <?php
+                            if ( class_exists( 'WooCommerce' ) && !is_front_page()) {
+                                woocommerce_breadcrumb();
+                            } ?>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        <?php endif; ?>?
         <section>
             <div class="container">
                 <div class="row">

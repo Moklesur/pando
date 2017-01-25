@@ -29,46 +29,6 @@ function themetim_customize_register( $wp_customize ) {
 		}
 	}
 
-	/**
-	 * ThemeTim Page
-	 */
-
-	if (class_exists('WP_Customize_Control')) {
-		class WP_Customize_Pages_Control extends WP_Customize_Control {
-			/**
-			 * Render the control's content.
-			 */
-			public function render_content() {
-				$get_page = wp_dropdown_pages(
-					array(
-						'name'                  => '_default_pages_' . $this->id,
-						'depth'                 => 0,
-						'child_of'              => 0,
-						'echo'                  => 0,
-						'id'                    => null, // string
-						'class'                 => null, // string
-						'show_option_none'      => __( '&mdash; Select &mdash;' ), // string
-						'show_option_no_change' => null, // string
-						'option_none_value'     => '0', // string
-						'selected'              => $this->value(),
-					)
-				);
-
-				$get_page = str_replace( '<select', '<select ' . $this->get_link(), $get_page );
-
-				printf(
-					'<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
-					$this->label,
-					$get_page
-				);
-			}
-		}
-	}
-
-	/*********************************************
-	 * General
-	 *********************************************/
-
 	/*********************************************
 	 * Social Links
 	 *********************************************/
@@ -76,94 +36,6 @@ function themetim_customize_register( $wp_customize ) {
 		'title' => __( 'Social Media', 'text_domain' ),
 		'description' => '',
 		'priority' => 60,
-	) );
-	/**
-	 * ThemeTim Divider
-	 */
-	$wp_customize->add_setting('themetim_options[divider]', array(
-			'type'              => 'divider_control',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'esc_attr',
-		)
-	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'header_social', array(
-			'label' => __('Header Social', 'themetidy'),
-			'section' => 'social_settings',
-			'settings' => 'themetim_options[divider]'
-		) )
-	);
-	/********************* Header Social ************************/
-	$wp_customize->add_setting( 'header_fb', array(
-		'default'           => 'https://www.facebook.com/',
-	) );
-	$wp_customize->add_control( 'header_fb', array(
-		'label' => __( 'Facebook', 'text_domain' ),
-		'type' => 'text',
-		'section' => 'social_settings',
-		'settings' => 'header_fb'
-	) );
-	$wp_customize->add_setting( 'header_tw', array(
-		'default'           => 'https://twitter.com',
-	) );
-	$wp_customize->add_control( 'header_tw', array(
-		'label' => __( 'Twitter', 'text_domain' ),
-		'type' => 'text',
-		'section' => 'social_settings',
-		'settings' => 'header_tw'
-	) );
-	$wp_customize->add_setting( 'header_li', array(
-		'default'           => 'https://linkedin.com',
-	) );
-	$wp_customize->add_control( 'header_li', array(
-		'label' => __( 'Linkedin', 'text_domain' ),
-		'type' => 'text',
-		'section' => 'social_settings',
-		'settings' => 'header_li'
-	) );
-	$wp_customize->add_setting( 'header_pint', array(
-		'default'           => 'https://pinterest.com',
-	) );
-	$wp_customize->add_control( 'header_pint', array(
-		'label' => __( 'Pinterest', 'text_domain' ),
-		'type' => 'text',
-		'section' => 'social_settings',
-		'settings' => 'header_pint'
-	) );
-	$wp_customize->add_setting( 'header_ins', array(
-		'default'           => 'https://instagram.com',
-	) );
-	$wp_customize->add_control( 'header_ins', array(
-		'label' => __( 'Instagram', 'text_domain' ),
-		'type' => 'text',
-		'section' => 'social_settings',
-		'settings' => 'header_ins'
-	) );
-	$wp_customize->add_setting( 'header_dri', array(
-		'default'           => 'https://dribbble.com',
-	) );
-	$wp_customize->add_control( 'header_dri', array(
-		'label' => __( 'Dribbble', 'text_domain' ),
-		'type' => 'text',
-		'section' => 'social_settings',
-		'settings' => 'header_dri'
-	) );
-	$wp_customize->add_setting( 'header_plus', array(
-		'default'           => 'https://plus.google.com',
-	) );
-	$wp_customize->add_control( 'header_plus', array(
-		'label' => __( 'Plus Google', 'text_domain' ),
-		'type' => 'text',
-		'section' => 'social_settings',
-		'settings' => 'header_plus'
-	) );
-	$wp_customize->add_setting( 'header_you', array(
-		'default'           => 'https://youtube.com',
-	) );
-	$wp_customize->add_control( 'header_you', array(
-		'label' => __( 'YouTube', 'text_domain' ),
-		'type' => 'text',
-		'section' => 'social_settings',
-		'settings' => 'header_you'
 	) );
 
 	/**
@@ -317,59 +189,8 @@ function themetim_customize_register( $wp_customize ) {
 			'settings' => 'themetim_options[divider]'
 		) )
 	);
-	/********************* Top Header ************************/
-	$wp_customize->add_setting( 'top_header_account_enable', array(
-		'default'           => '1',
-	) );
-	$wp_customize->add_control( 'top_header_account_enable', array(
-		'label' => __( 'Enable Login Register', 'text_domain' ),
-		'type' => 'checkbox',
-		'description'   => __('', 'text_domain'),
-		'section' => 'title_tagline',
-		'settings' => 'top_header_account_enable'
-	) );
 
 
-	$wp_customize->add_setting( 'top_header_account', array(
-		'default'           => 'Account',
-	) );
-	$wp_customize->add_control( 'top_header_account', array(
-		'label' => __( 'My Account', 'text_domain' ),
-		'type' => 'text',
-		'section' => 'title_tagline',
-		'settings' => 'top_header_account',
-		'description'   => __('## Title of the link ##', 'text_domain')
-	) );
-
-	$wp_customize->add_setting(
-		'header_myaccount'
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Pages_Control(
-			$wp_customize,
-			'header_myaccount',
-			array(
-				'label'    => 'My Account Page',
-				'settings' => 'header_myaccount',
-				'section'  => 'title_tagline'
-			)
-		)
-	);
-
-	$wp_customize->add_setting(
-		'header_login_register'
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Pages_Control(
-			$wp_customize,
-			'header_login_register',
-			array(
-				'label'    => 'Login / Register Page',
-				'settings' => 'header_login_register',
-				'section'  => 'title_tagline'
-			)
-		)
-	);
 	$wp_customize->add_setting( 'cart_enable', array(
 		'default'           => '1',
 	) );
@@ -1394,62 +1215,6 @@ function themetim_customize_register( $wp_customize ) {
 		'type' => 'text',
 		'section' => 'typography',
 		'settings' => 'heading_font_weight',
-		'description'   => __('', 'text_domain')
-	) );
-	/**
-	 * ThemeTim Divider
-	 */
-	$wp_customize->add_setting('themetim_options[divider]', array(
-			'type'              => 'divider_control',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'esc_attr',
-		)
-	);
-	$wp_customize->add_control( new themetim_divider( $wp_customize, 'section_gap', array(
-			'label' => __('Section Gap', 'themetidy'),
-			'section' => 'typography',
-			'settings' => 'themetim_options[divider]'
-		) )
-	);
-
-	$wp_customize->add_setting( 'section_gap_1', array(
-		'default'           => '80',
-	) );
-	$wp_customize->add_control( 'section_gap_1', array(
-		'label' => __( 'Section Gap 1', 'text_domain' ),
-		'type' => 'number',
-		'section' => 'typography',
-		'settings' => 'section_gap_1',
-		'description'   => __('', 'text_domain')
-	) );
-	$wp_customize->add_setting( 'section_gap_2', array(
-		'default'           => '80',
-	) );
-	$wp_customize->add_control( 'section_gap_2', array(
-		'label' => __( 'Section Gap 2', 'text_domain' ),
-		'type' => 'number',
-		'section' => 'typography',
-		'settings' => 'section_gap_2',
-		'description'   => __('', 'text_domain')
-	) );
-	$wp_customize->add_setting( 'section_gap_3', array(
-		'default'           => '50',
-	) );
-	$wp_customize->add_control( 'section_gap_3', array(
-		'label' => __( 'Section Gap 3', 'text_domain' ),
-		'type' => 'number',
-		'section' => 'typography',
-		'settings' => 'section_gap_3',
-		'description'   => __('', 'text_domain')
-	) );
-	$wp_customize->add_setting( 'section_gap_4', array(
-		'default'           => '50',
-	) );
-	$wp_customize->add_control( 'section_gap_4', array(
-		'label' => __( 'Section Gap 4', 'text_domain' ),
-		'type' => 'number',
-		'section' => 'typography',
-		'settings' => 'section_gap_4',
 		'description'   => __('', 'text_domain')
 	) );
 

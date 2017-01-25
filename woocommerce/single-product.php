@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header( 'shop' ); ?>
 <main>
 	<!--------------- Woo Breadcrumb ---------------->
-	<section class="breadcrumb-wrap text-capitalize  text-center">
+	<section class="breadcrumb-wrap text-capitalize text-center">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -36,7 +36,7 @@ get_header( 'shop' ); ?>
 		</div>
 	</section>
 	<section>
-		<div class='container'>
+		<div class='container padding-gap-1'>
 			<div class='row'>
 				<?php
 				/**

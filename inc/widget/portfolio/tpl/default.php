@@ -5,7 +5,7 @@
 		<?php endif; ?>
 	</div>
 	<?php foreach( $instance['menus'] as $i => $menu ) : ?>
-		<div class="themetim-portfolio-list  position-relative padding-null col-md-<?php echo esc_attr( $instance['per_row'] ); ?> col-sm-<?php echo esc_attr( $instance['per_row'] ); ?> col-xs-12">
+		<div class="themetim-portfolio-list  position-relative padding-null col-md-<?php echo esc_attr( $instance['per_row'] ); ?> col-sm-<?php echo esc_attr( $instance['per_row'] ); ?> col-xs-6">
 			<?php
 			$profile_picture = $menu['profile_picture'];
 			$profile_picture_fallback = $menu['profile_picture_fallback'];

@@ -30,7 +30,7 @@
 				</div>
 			<?php endforeach; ?>
 		</div>
-		<div class="margin-top-40">
+		<div class="margin-top-40 testimonial-indicator">
 			<!-- Controls -->
 			<a class="" href="#testimonial-slider" role="button" data-slide="prev">
 				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>

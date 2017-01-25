@@ -16,23 +16,58 @@
     .woocommerce a.add_to_cart_button{
         padding: .618em 6px;
     }
-    .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+    .woocommerce.columns-4 ul.products li.product{
         width: 22.566666%;
     }
     .woocommerce.archive ul.products li.last{
         margin-right: 0;
     }
+    .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+        width: 47%;
+    }
+    .woocommerce div.product form.cart .button {
+        margin-top: 30px;
+        width: 100%;
+    }
 }
 /********************************************************
-        ## Min Width 992px And Max Width 1199px
+        ## Min Width 768px And Max Width 991px
 ********************************************************/
 @media (min-width: 768px) and (max-width: 991px){
-
+    .primary-menu .navbar-collapse ul li a {
+        padding: 5px 10px;
+    }
+    .service-fix {
+        padding: 20px;
+    }
+    .pricing-details {
+        padding: 30px 15px 30px;
+        border-top: 1px solid #eee;
+        margin-top: 40px;
+    }
+    .woocommerce.columns-4 ul.products li.product {
+        width: 48%;
+    }
+    .fact-list li {
+        padding: 0 15px;
+    }
+    .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+        width: 47%;
+    }
 }
 /********************************************************
         ## Max Width 767px
 ********************************************************/
 @media only screen and (max-width:767px) {
+    .breadcrumb-wrap .page-header {
+        font-size: 38px;
+    }
+    .thumbnails .owl-nav span {
+        display: inline-block;
+        text-align: center;
+        margin: 20px 0 0 !important;
+        position: relative;
+    }
     .primary-menu .xs-angle-down {
         margin: -10px 0 0 0;
         padding: 9px 15px;
@@ -44,6 +79,10 @@
     }
     .navbar-default .navbar-collapse {
         overflow: hidden;
+        float: left !important;
+        text-align: left;
+        margin-top: 20px;
+        width: 100%;
     }
     .primary-menu ul.nav li.dropdown:hover > ul.dropdown-menu {
         display: none;
@@ -53,13 +92,15 @@
         box-shadow: none;
         border: 0;
     }
-    .primary-menu .dropdown-menu {
+    .primary-menu .navbar-collapse .dropdown-menu {
         width: auto;
         float: none;
         position: static;
     }
-    .text-center-xs,.header-top .text-right{
-        text-align: center;
+    .search-cart{
+        position: relative;
+        margin-top: 10px;
+        margin-right: 15px;
     }
     .logo img{
         margin: 0 auto;
@@ -76,19 +117,22 @@
         width: auto;
     }
     .primary-menu ul li a {
-        padding: 15px;
+
     }
     .navbar-default .navbar-toggle{
-
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        border-color: #fec826;
     }
     .navbar-default .navbar-toggle .icon-bar{
-
+        background-color: #fec826;
     }
     .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
-
+        background-color: #fec826;
     }
     .navbar-default .navbar-toggle:focus .icon-bar, .navbar-default .navbar-toggle:hover .icon-bar{
-
+        background-color: #fff;
     }
     .woocommerce .product-fix .compare, .woocommerce .product-fix .yith-wcqv-button{
         visibility: visible;
@@ -100,14 +144,59 @@
     .footer-bottom ,.footer-bottom ul{
         text-align: center;
     }
-
+    .search-fix{
+        margin-top: 24px;
+        width: 280px;
+        right: -90px;
+    }
+    .service-fix {
+        padding: 25px;
+    }
+    .testimonial-details{
+        padding: 0;
+    }
+    .pricing-list li {
+        width: 100%;
+        padding: 0;
+    }
+    .pricing-details {
+        padding: 40px 25px 40px;
+    }
+    .fact-list li {
+        width: 50%;
+        padding: 0;
+        border-right: 0;
+    }
+    .slider-wrap h3{
+        font-size: 18px;
+    }
+    .header.sticky{
+        position: relative;
+    }
+    .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+        width: 100%;
+    }
 }
 /********************************************************
         ## Max Width 480px
 ********************************************************/
 @media only screen and (max-width:480px) {
-    .woocommerce ul.products li.product, .woocommerce-page ul.products li.product, .woocommerce-page[class*=columns-] ul.products li.product, .woocommerce[class*=columns-] ul.products li.product{
+    .woocommerce div.product form.cart .button{
         width: 100%;
+        margin-top: 20px;
+    }
+    .brand li {
+        width: 25%;
+    }
+    .themetim-portfolio-list, .woocommerce ul.products li.product, .woocommerce-page ul.products li.product, .woocommerce-page[class*=columns-] ul.products li.product, .woocommerce[class*=columns-] ul.products li.product{
+        width: 100%;
+    }
+    .slider-wrap h2 {
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+    .main-slider .slider-inner{
+        top: 0;
     }
 }
 /********************************************************

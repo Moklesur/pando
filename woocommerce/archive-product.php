@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' ); ?>
-<main class="themetim-archive-product padding-gap-2">
+<main class="themetim-archive-product">
 	<!--------------- Woo Breadcrumb ---------------->
 	<section class="breadcrumb-wrap text-capitalize  text-center">
 		<div class="container">
@@ -38,7 +38,7 @@ get_header( 'shop' ); ?>
 		</div>
 	</section>
 	<section>
-		<div class='container'>
+		<div class='container padding-gap-1'>
 			<div class='row'>
 				<?php
 				/**
@@ -61,9 +61,9 @@ get_header( 'shop' ); ?>
 					?>
 				</div>
 				<?php if (get_theme_mod('shop_sidebar_enable','1') ) : ?>
-				<div class='col-md-9 col-sm-12 col-xs-12'>
+				<div class='col-md-9 col-sm-12 col-xs-12 padding-gap-2'>
 					<?php else: ?>
-					<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="col-md-12 col-sm-12 col-xs-12 padding-gap-2">
 						<?php endif; ?>
 						<?php if ( have_posts() ) : ?>
 
@@ -120,7 +120,7 @@ get_header( 'shop' ); ?>
 					 * @hooked woocommerce_get_sidebar - 10
 					 */
 					if (get_theme_mod('shop_sidebar_enable') ) :
-						?><aside id="secondary" class="widget-area col-md-3 col-sm-12 col-xs-12 padding-gap-1" role="complementary"><?php
+						?><aside id="secondary" class="widget-area col-md-3 col-sm-12 col-xs-12 padding-gap-2" role="complementary"><?php
 						dynamic_sidebar( 'shop-product' );
 						?></aside><?php
 					endif;

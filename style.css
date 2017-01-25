@@ -89,6 +89,7 @@ p,.woocommerce-Address address {
 	background: #fec826;
 }
 img {
+	height: auto;
 	max-width: 100%;
 }
 .breadcrumb{
@@ -100,7 +101,6 @@ img {
 }
 .breadcrumb-wrap{
 	padding: 70px 0;
-	margin-bottom: 90px;
 	background: #fec826;
 }
 .breadcrumb-wrap .page-header{
@@ -183,35 +183,22 @@ img {
 /********************************************************
     ## Header
 ********************************************************/
-.header-top .header-social a{
-	padding: 0 7px 0 0;
+.header ,.sticky{
+	padding: 10px 0;
+	z-index: 10;
+	-webkit-transition: top 500ms ease-in-out;
+	-moz-transition: top 500ms ease-in-out;
+	-o-transition: top 500ms ease-in-out;
+	transition: top 500ms ease-in-out;
+	top: -50%;
+	position: relative;
 }
-.header-middle .mini-cart{
-	margin-top: 25px;
-}
-.header-bottom{
-	background: #f8f8f8;
-}
-.header-bottom .navbar-default{
-	margin-bottom: 0;
-	height: inherit;
-	background: transparent;
-	border: 0;
-}
-.sticky .header-middle,.sticky .header-top{
-	display: none;
-}
-header,.sticky .header-bottom{
-	transition: all 0.4s ease;
-}
-.sticky .header-bottom{
+.header.sticky{
 	top: 0;
 	position: fixed;
 	width: 100%;
 	z-index: 10;
-}
-.header {
-	padding: 10px 0;
+	background: rgba(255, 255, 255, .8);
 }
 .search-fix{
 	left: auto;
@@ -327,6 +314,9 @@ header,.sticky .header-bottom{
 /********************************************************
     ## Home
 ********************************************************/
+.testimonial .page-header,.testimonial-details p,.testimonial-indicator a{
+	color: #fff;
+}
 .testimonial-details {
 	font-size: 16px;
 	padding: 15px;
@@ -361,6 +351,9 @@ header,.sticky .header-bottom{
 	padding: 40px 65px 40px;
 	border-top: 1px solid #eee;
 	margin-top: 40px;
+}
+.pricing-list li:nth-child(2n+2)>div{
+	border-color: #fec826;
 }
 .fact-list li,.fact-list li h1 {
 	color: #fff;
@@ -435,6 +428,11 @@ header,.sticky .header-bottom{
 	border-color: #111;
 	padding: 10px 15px;
 }
+.wpcf7 .wpcf7-text,.wpcf7 .wpcf7-textarea{
+	padding: 6px 15px;
+	border-color: #000;
+	border-width: 2px;
+}
 .wpcf7-form-control-wrap{
 	margin-top: 5px;
 }
@@ -463,6 +461,9 @@ header,.sticky .header-bottom{
 }
 .widget-area section:first-child{
 	padding-top: 0;
+}
+.widget-area section:first-child h4{
+	margin-top: 0;
 }
 .widget-area section .widget-title{
 	position: relative;
@@ -904,4 +905,18 @@ header,.sticky .header-bottom{
 	margin-bottom: 90px;
 	margin-left: 15px;
 	margin-top: 90px;
+}
+.search-submit{
+	padding: 10px 25px;
+}
+.checkout_coupon .button{
+	padding: 12px 25px;
+}
+.animsition-loading {
+	border-top: 3px solid #fec826;
+	border-right: 3px solid #fec826;
+	border-bottom: 2px solid #fec826;
+	border-left: 3px solid #fec826;
+	width: 50px;
+	height: 50px;
 }

@@ -44,10 +44,7 @@ if ( ! function_exists( 'themetim_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary', 'themetim' ),
-			'footer-1' => esc_html__( 'Footer 1', 'themetim' ),
-			'footer-2' => esc_html__( 'Footer 2', 'themetim' ),
-			'footer-3' => esc_html__( 'Footer 3', 'themetim' ),
+			'primary' => esc_html__( 'Primary', 'themetim' )
 		) );
 
 		/*

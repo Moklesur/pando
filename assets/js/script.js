@@ -13,7 +13,6 @@ jQuery(function(){
             loader: 'none',
             margin:'',
             alignment: 'center',
-            minHeight: '600px',
             thumbnails: true,
             playPause: false,
             loaderColor: '#f9f9f9',
